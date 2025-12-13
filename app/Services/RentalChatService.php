@@ -140,7 +140,7 @@ Instructions:
             'bedrooms' => $property->bedrooms,
             'bathrooms' => $property->bathrooms,
             'available_on' => $property->available_on?->toDateString(),
-            'infrastructures' => $property->infrastructures->map(fn($infrastructure): array => [
+            'infrastructures' => $property->infrastructures->map(fn ($infrastructure): array => [
                 'name' => $infrastructure->name,
                 'category' => $infrastructure->category,
                 'distance_meters' => $infrastructure->pivot->distance_meters,

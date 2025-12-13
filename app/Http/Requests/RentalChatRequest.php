@@ -38,7 +38,7 @@ final class RentalChatRequest extends FormRequest
     {
         return collect($this->safe()->except('question'))
             ->reject(fn ($value): bool => $value === null || $value === '')
-            ->map(fn($value, string $key) => in_array($key, ['max_rent', 'min_bedrooms', 'limit'], true)
+            ->map(fn ($value, string $key) => in_array($key, ['max_rent', 'min_bedrooms', 'limit'], true)
                 ? (int) $value
                 : $value)
             ->all();
